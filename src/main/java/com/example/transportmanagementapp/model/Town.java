@@ -1,4 +1,4 @@
-package com.example.transportmanagementapp.endpoint;
+package com.example.transportmanagementapp.model;
 
 import lombok.*;
 

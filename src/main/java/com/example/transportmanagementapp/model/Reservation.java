@@ -1,4 +1,4 @@
-package com.example.transportmanagementapp.endpoint;
+package com.example.transportmanagementapp.model;
 
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -28,11 +28,10 @@ public class Reservation implements Serializable {
 
     private int paidAmount;
 
-    @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+
     @JoinColumn(name = "trip_id")
     private Travel trip;
 }

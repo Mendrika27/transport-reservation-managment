@@ -34,27 +34,7 @@ paths:
           description: BadRequest
         '401':
           description: Unauthorized
-    patch:
-      tags:
-        - Users
-      operationId: patchUsers
-      description: Change a specific value partially
-      requestBody:
-        description: |
-          Possible updates on:
-          * name : change
-          * lastName: change
-          * cin: change
-          * contact:change
-        content:
-          '*/*':
-            schema:
-              $ref: '#/components/schemas/users'
-      responses:
-        '200': 
-          description: OK
-        '400':
-          description: BadRequest
+    
   /clients/{id}:
     get:
       tags:
@@ -74,35 +54,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/users'
-    patch:
-      tags:
-        - Users
-      operationId: patchUsers
-      description: Change a specific value partially
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema: 
-            type: integer
-      requestBody:
-        description: |
-          Possible updates on:
-          * name : change
-          * lastName: change
-          * cin: change
-          * contact:change
-        content:
-          '*/*':
-            schema:
-              $ref: '#/components/schemas/users'
-      responses:
-        '200': 
-          description: OK
-          content:
-            application/json:
-              schema: 
-                $ref: '#/components/schemas/createUser'
         '400':
           description: BadRequest
   /travels:
@@ -321,6 +272,8 @@ components:
       type: object
       properties:
         id:
+          type: integer
+        tarif:
           type: integer
         label: 
           type: string

@@ -1,4 +1,4 @@
-package com.example.transportmanagementapp.endpoint;
+package com.example.transportmanagementapp.model;
 
 import lombok.*;
 
@@ -6,25 +6,22 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "\"travel\"")
+@Table(name = "\"offer\"")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Travel implements Serializable {
+public class Offer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @Enumerated(EnumType.STRING)
+    private Label offerLabel;
 
-    private Offer offer;
-
-    @OneToMany
-    private Town start;
-
-    @OneToMany
-    private Town finish;
+    public enum Label{
+        Lite, Premium
+    }
 }

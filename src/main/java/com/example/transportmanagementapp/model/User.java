@@ -1,6 +1,6 @@
-package com.example.transportmanagementapp.endpoint;
+package com.example.transportmanagementapp.model;
 
-import com.sun.istack.NotNull;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,7 +23,6 @@ public class User implements Serializable {
 
     private String lastName;
 
-    @NotNull
     private String cin;
 
     private String contact;
